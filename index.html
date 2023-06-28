@@ -3,8 +3,9 @@
   <head>
     <title>R and databases</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2023-06-27" />
-    <script src="introduccion_R_files/header-attrs-2.18/header-attrs.js"></script>
+    <meta name="author" content="" />
+    <meta name="date" content="2023-06-28" />
+    <script src="introduccion_R_files/header-attrs-2.21/header-attrs.js"></script>
     <link href="introduccion_R_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="introduccion_R_files/panelset-0.2.6/panelset.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -42,22 +43,26 @@ background-position: 100% 0%
 
 &lt;img src="imagenes/rbase.jpeg" width="10%" style="display: block; margin: auto;" /&gt;
 
-.centered[El [*Rbase*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) es el nombre que se le asigna a la lógica básica de R y sus principales funciones, éste funciona con una lógica de anidación o de adentro hacia afuera]
+.centered[[*Rbase*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html) es el nombre que se le asigna a la lógica básica de R y sus principales funciones. Éste funciona con una lógica de anidación o de adentro hacia afuera]
+
+--
 
 Sobre Rbase se han desarrollado una infinidad de paquetes, uno de los mas relevantes es [Tidyverse](https://www.tidyverse.org/)
 
 &lt;img src="imagenes/hex-tidyverse.png" width="10%" style="display: block; margin: auto;" /&gt;
 
-[Tidyverse](https://www.tidyverse.org/) ofrece una infinidad de funciones que simplifican el trabajo de programación y el aprendizaje, ya que la lógica de su código es de izquierda a derecha. Es por esto que esto que las siguientes capsulas solo se enfocan en [Tidyverse](https://www.tidyverse.org/)
+--
 
-**Sin embargo hay aspectos fundamentales de R que debemos conocer...**
+[Tidyverse](https://www.tidyverse.org/) ofrece una infinidad de funciones que simplifican el trabajo de programación y el aprendizaje, ya que la lógica de su código es de izquierda a derecha. Es por esto que las siguientes cápsulas solo se enfocan en [Tidyverse](https://www.tidyverse.org/)
+
+**Sin embargo, hay aspectos fundamentales de R que debemos conocer...**
 
 ---
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Operadores Lógicos
+# Operadores lógicos
 
 .panelset[
 .panel[.panel-name[¿Cuáles son?]
@@ -85,7 +90,7 @@ Los operadores lógicos son usados para describir relaciones lógicas, expresada
 ]
 .panel[.panel-name[Un ejemplo]
 
-Por ejemplo, con == le *'pregunto'* a R si ese objeto tiene valor 1, las respuestas posibles son TRUE o FALSE
+Por ejemplo, con ==  *"le pregunto"* a R si el objeto *uno* tiene valor 1. Las respuestas posibles son TRUE o FALSE
 
 
 ```r
@@ -148,12 +153,12 @@ numero
 ## [1] 12
 ```
 
-Boleano
+Boolean
 
 ```r
-bolean = TRUE # o FALSE
+boolean = TRUE # o FALSE
 
-bolean
+boolean
 ```
 
 ```
@@ -170,7 +175,7 @@ background-position: 100% 0%
 .panelset[
 .panel[.panel-name[Vectores]
 
-pueden contener, números, textos o boleanos, un vector solo puede tener un tipo de dato
+Pueden contener números, textos o booleanos. Un vector solo puede tener un tipo de dato
 
 
 ```r
@@ -192,7 +197,8 @@ vector
 ```
 ## [1] "1"     "hola"  "FALSE" "5"     "6"
 ```
-Como podemos ver en el código anterior, si mezclamos un boleano con numéricos el boleano pasará a ser un número (TRUE = 1, FALSE= 0).
+Como podemos ver en el código anterior, si mezclamos un booleano con numéricos, el boleano pasará a ser un número (TRUE = 1, FALSE= 0).
+
 Si agregamos un texto, todo el resto del vector pasará a ser texto. 
 
 ]
@@ -237,11 +243,19 @@ background-position: 100% 0%
 datos = data.frame(nombre = c("Julia","Pedro", "Juan", "Diego"), 
                   nota1 = c(6.0,4.4,5.1,3.0), 
                   nota2 = c(4.9,2.8,6.9,4.4))
+datos
 ```
 
---
+```
+##   nombre nota1 nota2
+## 1  Julia   6.0   4.9
+## 2  Pedro   4.4   2.8
+## 3   Juan   5.1   6.9
+## 4  Diego   3.0   4.4
+```
 
- ¿Como accedo a una variable?
+
+¿Cómo accedo a una variable?
 
 
 ```r
